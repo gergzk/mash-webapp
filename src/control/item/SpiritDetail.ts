@@ -11,17 +11,17 @@ export default class SpiritDetail extends BaseControl<HTMLDivElement> {
         this.spirit = spirit;
     }
 
-    public Render(): Promise<void> {
+    public render(): Promise<void> {
         let div = document.createElement("div");
         div.className = "spiritDetail bubble";
         let h = document.createElement("h3");
-        h.innerText = this.spirit.Name;
+        h.innerText = this.spirit.name;
         div.appendChild(h);
         this.container.appendChild(div);
         return Promise.resolve();
     }
 
-    public Teardown(): Promise<void> {
+    public teardown(): Promise<void> {
         return Promise.resolve();
     }
 }

@@ -18,7 +18,7 @@ export default class VerticalList extends BaseContainer<HTMLDivElement> {
             let control = this.controls[key];
             let div = document.createElement("div");
             control.setRoot(div);
-            control.Render();
+            control.render();
             this.container.appendChild(div);
         }
         return Promise.resolve();

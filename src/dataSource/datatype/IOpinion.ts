@@ -1,8 +1,7 @@
 ﻿import IDBEntry from "./IDBEntry";
 
 interface IOpinion<TInput, TThing> extends IDBEntry {
-    Value: TInput;
-    Thing: TThing;
+    value: TInput;
+    thing: TThing;
 }
-
 export default IOpinion;

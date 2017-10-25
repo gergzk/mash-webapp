@@ -3,35 +3,35 @@ import IDistillery from "../../datatype/IDistillery";
 
 
 var mockDistilleries: IDistillery[] = [{
-    Description: "Talisker has been operating for over 200 years in the same barn.",
-    Address: "123 Talisker Drive, Scotland",
-    Link: null,
-    Id: "Talisker",
-    Name: "Talisker Distillery"
+    description: "Talisker has been operating for over 200 years in the same barn.",
+    address: "123 Talisker Drive, Scotland",
+    link: null,
+    id: "Talisker",
+    name: "Talisker Distillery"
 }, {
-    Description: "Laphroaig takes inspiration from the peat found by their sheep.",
-    Address: "Circle-o-peat, Great Plains, Scotland",
-    Link: null,
-    Id: "Laphroaig",
-    Name: "Laphroaig Family Stills"
+    description: "Laphroaig takes inspiration from the peat found by their sheep.",
+    address: "Circle-o-peat, Great Plains, Scotland",
+    link: null,
+    id: "Laphroaig",
+    name: "Laphroaig Family Stills"
 }, {
-    Description: "Oban has been warring with neighbor MacCallan for generations.",
-    Address: "Sir Oban's Castle, Loch Rock, Scotland",
-    Link: null,
-    Id: "Oban",
-    Name: "Oban"
+    description: "Oban has been warring with neighbor MacCallan for generations.",
+    address: "Sir Oban's Castle, Loch Rock, Scotland",
+    link: null,
+    id: "Oban",
+    name: "Oban"
 }, {
-    Description: "Lagavulin embraces the peat and smoke of the ocean. If you can burn it, they can bottle it.",
-    Address: "North Islay, Lagavulin Bay, Scotland",
-    Link: null,
-    Id: "Lagavulin",
-    Name: "Lagavulin, LLC"
+    description: "Lagavulin embraces the peat and smoke of the ocean. If you can burn it, they can bottle it.",
+    address: "North Islay, Lagavulin Bay, Scotland",
+    link: null,
+    id: "Lagavulin",
+    name: "Lagavulin, LLC"
 }, {
-    Description: "MacCallan is a non-traditionalist, finishing whiskeys in port barrels.",
-    Address: "Fort Mac, Upper Plains, Scotland",
-    Link: null,
-    Id: "MacCallan",
-    Name: "MacCallan Royal Distilling"
+    description: "MacCallan is a non-traditionalist, finishing whiskeys in port barrels.",
+    address: "Fort Mac, Upper Plains, Scotland",
+    link: null,
+    id: "MacCallan",
+    name: "MacCallan Royal Distilling"
 }
 ];
 
@@ -39,13 +39,13 @@ var mockDistilleries: IDistillery[] = [{
 
 export default class DistilleryDatabase implements IDistilleryDatabase {
     public find(id: string): Promise<IDistillery> {
-        let found = mockDistilleries.find((value: IDistillery) => { return value.Id === id; });
+        let found = mockDistilleries.find((value: IDistillery) => { return value.id === id; });
         return Promise.resolve(found);
     }
     public match(name: string): Promise<IDistillery[]> {
         name = name.toLowerCase();
         let matches = mockDistilleries.filter((value: IDistillery) => {
-            let vName = value.Name.toLowerCase();
+            let vName = value.name.toLowerCase();
             return vName.includes(name);
         })
         return Promise.resolve(matches);

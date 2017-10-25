@@ -14,10 +14,9 @@ Current state:
 Have SPA v0.1 model working with *Application tree. What are scenarios that are or not supported with it??
 Using require to delay-load referenced files
 Data shape for global/ calls 
-
+Real vs Local F5 app differences ironed out
 
 Next steps:
-Think through local vs loaded app.ts and index.html
 Use React - render annoyances will go away with ReactDOM.Render()
 Can I do a test project
 Bundle css. Can I use LESS or SASS?

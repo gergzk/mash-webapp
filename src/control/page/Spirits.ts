@@ -18,7 +18,7 @@ export default class Spirits extends BaseControl<HTMLDivElement> {
         let input = document.createElement("input");
         input.className = "bubble inputFull";
         input.oninput = () => {
-            this.GetWhiskeys(input.value).then(this.renderList.bind(this));
+            this.getWhiskeys(input.value).then(this.renderList.bind(this));
         };
         div.appendChild(input);
 
@@ -30,28 +30,28 @@ export default class Spirits extends BaseControl<HTMLDivElement> {
         this.db = db;
         this.contextPath = contextPath;
     }
-    public Render(): Promise<void> {
+    public render(): Promise<void> {
         this.container.innerHTML = "";
         this.container.appendChild(this.header);
         let listDiv = document.createElement("div");
         this.container.appendChild(listDiv);
         this.list = new VerticalList(listDiv);
-        return this.GetWhiskeys(null).then((spirits: ISpirit[]) => {
+        return this.getWhiskeys(null).then((spirits: ISpirit[]) => {
             this.renderList(spirits);
         });
     }
-    public Teardown(): Promise<void> {
+    public teardown(): Promise<void> {
         return Promise.resolve();
     }
     private renderList(spirits: ISpirit[]): Promise<void> {
-        this.list.RemoveAll();
+        this.list.removeAll();
         spirits.map((spirit: ISpirit) => {
-            this.list.AddControl(new SpiritCard(null, spirit));
+            this.list.addControl(new SpiritCard(null, spirit));
         })
-        return this.list.Render();
+        return this.list.render();
 
     }
-    private GetWhiskeys(text: string): Promise<ISpirit[]> {
+    private getWhiskeys(text: string): Promise<ISpirit[]> {
         if (!text) {
             return this.db.top(20);
         }

@@ -3,53 +3,53 @@ import ISpirit from "../../datatype/ISpirit";
 
 
 var mockSpirits: ISpirit[] = [{
-        Age: 10,
-        DistilleryId: "Talisker", // really this would be some guid
-        Id: "1",
-        ImageLink: null,
-        Name: "Talisker 10yr",
-        Proof: 91.6,
-        Type: "Whiskey/Scotch/Speyside" // no idea what this shuold actually look like ...
+        age: 10,
+        distilleryId: "Talisker", // really this would be some guid
+        id: "1",
+        imageLink: null,
+        name: "Talisker 10yr",
+        proof: 91.6,
+        type: "Whiskey/Scotch/Speyside" // no idea what this shuold actually look like ...
     }, {
-        Age: 18,
-        DistilleryId: "Talisker",
-        Id: "2",
-        ImageLink: null,
-        Name: "Talisker 18yr",
-        Proof: 91.6,
-        Type: "Whiskey/Scotch/Speyside"
+        age: 18,
+        distilleryId: "Talisker",
+        id: "2",
+        imageLink: null,
+        name: "Talisker 18yr",
+        proof: 91.6,
+        type: "Whiskey/Scotch/Speyside"
     }, {
-        Age: 12,
-        DistilleryId: "Laphroaig",
-        Id: "3",
-        ImageLink: null,
-        Name: "Laphroaig 12yr",
-        Proof: 86,
-        Type: "Whiskey/Scotch/Islay"
+        age: 12,
+        distilleryId: "Laphroaig",
+        id: "3",
+        imageLink: null,
+        name: "Laphroaig 12yr",
+        proof: 86,
+        type: "Whiskey/Scotch/Islay"
     }, {
-        Age: 12,
-        DistilleryId: "Laphroaig",
-        Id: "4",
-        ImageLink: null,
-        Name: "Laphroaig 12yr Quarter Cask",
-        Proof: 86,
-        Type: "Whiskey/Scotch/Islay"
+        age: 12,
+        distilleryId: "Laphroaig",
+        id: "4",
+        imageLink: null,
+        name: "Laphroaig 12yr Quarter Cask",
+        proof: 86,
+        type: "Whiskey/Scotch/Islay"
     }, {
-        Age: 14,
-        DistilleryId: "Oban",
-        Id: "5",
-        ImageLink: null,
-        Name: "Oban",
-        Proof: 90,
-        Type: "Whiskey/Scotch/Highland"
+        age: 14,
+        distilleryId: "Oban",
+        id: "5",
+        imageLink: null,
+        name: "Oban",
+        proof: 90,
+        type: "Whiskey/Scotch/Highland"
     }, {
-        Age: 16,
-        DistilleryId: "Lagavulin",
-        Id: "6",
-        ImageLink: null,
-        Name: "Lagavulin 16yr",
-        Proof: 86,
-        Type: "Whiskey/Scotch/Islay"
+        age: 16,
+        distilleryId: "Lagavulin",
+        id: "6",
+        imageLink: null,
+        name: "Lagavulin 16yr",
+        proof: 86,
+        type: "Whiskey/Scotch/Islay"
     },
 ];
 
@@ -57,20 +57,20 @@ var mockSpirits: ISpirit[] = [{
 
 export default class SpiritDatabase implements ISpiritDatabase {
     public find(id: string): Promise<ISpirit> {
-        let found = mockSpirits.find((value: ISpirit) => { return value.Id === id; });
+        let found = mockSpirits.find((value: ISpirit) => { return value.id === id; });
         return Promise.resolve(found);
     }
     public match(name: string): Promise<ISpirit[]> {
         name = name.toLowerCase();
         let matches = mockSpirits.filter((value: ISpirit) => {
-            let vName = value.Name.toLowerCase();
+            let vName = value.name.toLowerCase();
             return vName.includes(name);
         })
         return Promise.resolve(matches);
     }
     public products(distilleryId: string): Promise<ISpirit[]> {
         let matches = mockSpirits.filter((value: ISpirit) => {
-            return value.DistilleryId === distilleryId;
+            return value.distilleryId === distilleryId;
         })
         return Promise.resolve(matches);
     }

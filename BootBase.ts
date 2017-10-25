@@ -22,7 +22,7 @@ export default abstract class BootBase {
 
     public start(): Promise<void> {
         return this.getRoot().then((root: HTMLDivElement) => {
-            this.context.RootElement = root;
+            this.context.rootElement = root;
         }).then(() => {
             this.populateInjectedState();
             this.fillContext();
@@ -57,7 +57,7 @@ export default abstract class BootBase {
             id: injectedUser.id,
             name: injectedUser.name
         };
-        this.context.User = user;
+        this.context.user = user;
     }
     private unroll(): Promise<void> {
         // What's going on here? 

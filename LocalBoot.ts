@@ -6,8 +6,8 @@ export default class LocalBoot extends BootBase {
     protected fillContext(): Promise<void> {
         let spiritDB = new SpiritDatabase();
         let distDB = new DistilleryDatabase();
-        this.context.DistilleryDatabase = new DistilleryDatabase();
-        this.context.SpiritDatabase = new SpiritDatabase();
+        this.context.distilleryDatabase = new DistilleryDatabase();
+        this.context.spiritDatabase = new SpiritDatabase();
         return Promise.resolve();
     }
 }

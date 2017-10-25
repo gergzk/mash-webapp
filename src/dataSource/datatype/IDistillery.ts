@@ -1,11 +1,10 @@
 ﻿import IDBEntry from "./IDBEntry";
 
 interface IDistillery extends IDBEntry {
-    Name: string;
-    Address: string; // should be something more formal?
-    Link: string;
-    Description: string;
+    name: string;
+    address: string; // should be something more formal?
+    link: string;
+    description: string;
     // ... what else?
 }
-
 export default IDistillery;

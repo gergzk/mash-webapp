@@ -15,9 +15,9 @@ export default class SpiritsApplication extends BaseApplication {
 
     public handleLocally(term: string, terms: string[], processedTerms: string[]): Promise<void> {
         // this guy needs to look at the id and look up the spirit in question
-        return this.context.SpiritDatabase.find(term).then((spirit: ISpirit) => {
-            let page = new SpiritDetail(this.context.RootElement, spirit);
-            return page.Render();
+        return this.context.spiritDatabase.find(term).then((spirit: ISpirit) => {
+            let page = new SpiritDetail(this.context.rootElement, spirit);
+            return page.render();
         });
     }
 }

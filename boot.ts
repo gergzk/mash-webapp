@@ -4,8 +4,8 @@ import SpiritDatabase from "src/dataSource/global/SpiritDatabase";
 
 export default class Boot extends BootBase {
     protected fillContext(): Promise<void> {
-        this.context.DistilleryDatabase = new DistilleryDatabase();
-        this.context.SpiritDatabase = new SpiritDatabase();
+        this.context.distilleryDatabase = new DistilleryDatabase();
+        this.context.spiritDatabase = new SpiritDatabase();
         return Promise.resolve();
     }
 }

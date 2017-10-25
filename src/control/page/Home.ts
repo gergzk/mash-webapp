@@ -9,7 +9,7 @@ export default class Home extends BaseControl<HTMLDivElement> {
     private list: VerticalList;
     private get header(): HTMLElement {
         let h = document.createElement("h1");
-        h.innerText = "Welcome " + this.context.User.name;
+        h.innerText = "Welcome " + this.context.user.name;
         return h;
     }
 
@@ -18,7 +18,7 @@ export default class Home extends BaseControl<HTMLDivElement> {
         this.context = context;
     }
 
-    public Render(): Promise<void> {
+    public render(): Promise<void> {
         this.container.innerHTML = "";
         this.container.appendChild(this.header);
         let listDiv = document.createElement("div");
@@ -26,14 +26,14 @@ export default class Home extends BaseControl<HTMLDivElement> {
         this.list = new VerticalList(listDiv);
 
         let promises: Promise<void>[] = [];
-        return this.context.SpiritDatabase.top(5).then((spirits: ISpirit[]) => {
+        return this.context.spiritDatabase.top(5).then((spirits: ISpirit[]) => {
             spirits.map((spirit: ISpirit) => {
-                this.list.AddControl(new SpiritCard(null, spirit));
+                this.list.addControl(new SpiritCard(null, spirit));
             })
-            return this.list.Render();
+            return this.list.render();
         });
     }
-    public Teardown(): Promise<void> {
+    public teardown(): Promise<void> {
         return Promise.resolve();
     }
 }

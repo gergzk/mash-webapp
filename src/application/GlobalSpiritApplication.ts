@@ -17,8 +17,8 @@ export default class GlobalSpiritApplication extends BaseApplication {
 
     public handleLocally(term: string, terms: string[], processedTerms: string[]): Promise<void> {
         if (!term) {
-            let home = new Spirits(this.context.RootElement, this.context.SpiritDatabase, processedTerms.join("/"));
-            return home.Render();
+            let home = new Spirits(this.context.rootElement, this.context.spiritDatabase, processedTerms.join("/"));
+            return home.render();
         }
         // otherwise, hand off the value to the SpiritsApplication
         return this.spiritsApp.handleLocally(term, terms, processedTerms);

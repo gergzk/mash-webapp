@@ -10,26 +10,26 @@ export default abstract class BaseContainer<Telement extends HTMLElement> extend
     protected abstract MyRender(): Promise<void>;
     protected abstract MyTeardown(): Promise<void>;
 
-    public Teardown(): Promise<void> {
+    public teardown(): Promise<void> {
         let promise = Promise.resolve();
         for (let key in this.controls) {
             let control = this.controls[key];
-            promise = promise.then(control.Teardown);
+            promise = promise.then(control.teardown);
         }
         return promise.then(() => this.MyTeardown());
     }
-    public Render(): Promise<void> {
-        return this.Teardown().then(() => {
+    public render(): Promise<void> {
+        return this.teardown().then(() => {
             return this.MyRender();
         });
     }
-    public AddControl(control: BaseControl<Telement>): void {
+    public addControl(control: BaseControl<Telement>): void {
         this.controls[control.key] = control;
     }
-    public RemoveControl(key: string): void {
+    public removeControl(key: string): void {
         delete this.controls[key];
     }
-    public RemoveAll(): void {
+    public removeAll(): void {
         this.controls = {};
     }
 }

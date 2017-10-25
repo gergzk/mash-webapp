@@ -12,7 +12,7 @@ export default class GlobalApplication extends BaseApplication {
     }
 
     public handleLocally(term: string, terms: string[], processedTerms: string[]): Promise<void> {
-        let home = new Home(this.context.RootElement, this.context);
-        return home.Render();
+        let home = new Home(this.context.rootElement, this.context);
+        return home.render();
     }
 }

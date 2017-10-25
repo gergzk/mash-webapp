@@ -16,7 +16,7 @@
         this.container = root;
     }
 
-    abstract Render(): Promise<void>;
-    abstract Teardown(): Promise<void>;
+    abstract render(): Promise<void>;
+    abstract teardown(): Promise<void>;
     // what else does a BaseControl need to do?
 }

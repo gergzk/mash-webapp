@@ -1,12 +1,11 @@
 ﻿import IDBEntry from "./IDBEntry";
 
 interface ISpirit extends IDBEntry {
-    Type: string; // or an enum?
-    Proof: number;
-    Name: string;
-    DistilleryId: string;
-    Age: number;
-    ImageLink: string;
+    type: string; // or an enum?
+    proof: number;
+    name: string;
+    distilleryId: string;
+    age: number;
+    imageLink: string;
 }
-
 export default ISpirit;

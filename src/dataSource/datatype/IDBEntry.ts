@@ -1,5 +1,4 @@
 ﻿interface IDBEntry {
-    Id: string;
+    id: string;
 }
-
 export default IDBEntry;

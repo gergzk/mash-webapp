@@ -5,5 +5,4 @@ interface IDatabase<T extends IDBEntry> {
     match(name: string): Promise<T[]>;
     top(max: number): Promise<T[]>;
 }
-
 export default IDatabase;
