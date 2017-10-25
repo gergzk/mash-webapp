@@ -86,7 +86,9 @@
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="app_local.ts" />
-    <TypeScriptCompile Include="boot.ts" />
+    <TypeScriptCompile Include="Boot.ts" />
+    <TypeScriptCompile Include="BootBase.ts" />
+    <TypeScriptCompile Include="LocalBoot.ts" />
     <TypeScriptCompile Include="src\application\BaseApplication.ts" />
     <TypeScriptCompile Include="src\application\GlobalApplication.ts" />
     <TypeScriptCompile Include="src\application\GlobalSpiritApplication.ts" />

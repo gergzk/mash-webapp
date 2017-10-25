@@ -1,8 +1,5 @@
-﻿x  Create a DistilleryDatabase, like the SpiritDatabase
-Build caches over the top of them using the same interfaces
-Think about what the Opinion entries might look like
-See if you can add unit tests to the project
-Start sketching out the UI a bit:
+﻿
+Sketching the UI out a bit:
 1. Global page - if you have no me data stored. Don't store anything until you actually persist information
 	a. Search through spirits
 	b. On a spirit, see others by the same distillery
@@ -13,13 +10,20 @@ Start sketching out the UI a bit:
 3. Spirit page shows a card of the spirit
 
 
-Longer term, get React together. React will make great card bases, etc. 
-Tasting experience will likely need a fancy native/canvas implementation? Touch focused and requires understanding, maybe a "fixed total points" concept?
-
+Current state:
 Have SPA v0.1 model working with *Application tree. What are scenarios that are or not supported with it??
+Using require to delay-load referenced files
+Data shape for global/ calls 
 
 
+Next steps:
 Think through local vs loaded app.ts and index.html
 Use React - render annoyances will go away with ReactDOM.Render()
 Can I do a test project
+Bundle css. Can I use LESS or SASS?
 Add more layers (ex: My, SpiritPage)
+Build caches over the top of them using the same interfaces
+Think about what the Opinion entries might look like
+What does the my/ set of calls look like?
+Tasting experience will likely need a fancy native/canvas implementation? Touch focused and requires understanding, maybe a "fixed total points" concept?
+Bundle the js files
