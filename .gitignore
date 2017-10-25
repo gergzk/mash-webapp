@@ -288,5 +288,9 @@ __pycache__/
 *.xsd.cs
 
 # Generated js files
+*.js
+*.js.map
 src/**/*.js
+src/**/*.js.map
+
 

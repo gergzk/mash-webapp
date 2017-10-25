@@ -1,0 +1,26 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+span {
+    font-style: italic;
+}
+
+.bubble {
+    border-radius: 10px;
+    margin: 5px 5px 5px 5px;
+}
+.spiritCard {
+    width: 400px;
+    height: 150px;
+    background-color: azure;
+}
+.spiritDetail {
+    width: 400px;
+    height: 600px;
+    background-color: burlywood;
+}
+
+.inputFull {
+    width: 100%;
+}
