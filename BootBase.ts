@@ -1,4 +1,5 @@
-﻿import TopApplication from "src/application/TopApplication";
+﻿import IBootContext from "./IBootContext";
+import TopApplication from "src/application/TopApplication";
 import GlobalApplication from "src/application/GlobalApplication";
 import GlobalSpiritApplication from "src/application/GlobalSpiritApplication";
 import SpiritsApplication from "src/application/SpiritsApplication";
@@ -6,7 +7,11 @@ import SpiritsApplication from "src/application/SpiritsApplication";
 // This app.ts will need to use the real dataSource, maybe based on global data injected
 // by the host. App.ts is loaded via the real host, app_local.ts is loaded when we F5. 
 // They should be almost identical; really just the context object is different.
+// This base class does most of the identical work.
 import IApplicationContext from "src/application/IApplicationContext";
+import IUser from "src/application/IUser";
+
+declare var mash: IBootContext;
 
 export default abstract class BootBase {
     protected context: IApplicationContext;
@@ -19,6 +24,7 @@ export default abstract class BootBase {
         return this.getRoot().then((root: HTMLDivElement) => {
             this.context.RootElement = root;
         }).then(() => {
+            this.populateInjectedState();
             this.fillContext();
         }).then(() => {
             this.unroll();
@@ -43,6 +49,15 @@ export default abstract class BootBase {
             });
             return promise;
         }
+    }
+    // This is guaranteed to be synchronous
+    private populateInjectedState(): void {
+        let injectedUser = mash.user;
+        let user: IUser = {
+            id: injectedUser.id,
+            name: injectedUser.name
+        };
+        this.context.User = user;
     }
     private unroll(): Promise<void> {
         // What's going on here? 

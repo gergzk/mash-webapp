@@ -88,11 +88,13 @@
     <TypeScriptCompile Include="app_local.ts" />
     <TypeScriptCompile Include="Boot.ts" />
     <TypeScriptCompile Include="BootBase.ts" />
+    <TypeScriptCompile Include="IBootContext.ts" />
     <TypeScriptCompile Include="LocalBoot.ts" />
     <TypeScriptCompile Include="src\application\BaseApplication.ts" />
     <TypeScriptCompile Include="src\application\GlobalApplication.ts" />
     <TypeScriptCompile Include="src\application\GlobalSpiritApplication.ts" />
     <TypeScriptCompile Include="src\application\IApplicationContext.ts" />
+    <TypeScriptCompile Include="src\application\IUser.ts" />
     <TypeScriptCompile Include="src\application\SpiritsApplication.ts" />
     <TypeScriptCompile Include="src\application\TopApplication.ts" />
     <TypeScriptCompile Include="src\control\BaseControl.ts" />
@@ -107,12 +109,14 @@
     <TypeScriptCompile Include="src\dataSource\datatype\IOpinion.ts" />
     <TypeScriptCompile Include="src\dataSource\datatype\ISpirit.ts" />
     <TypeScriptCompile Include="src\dataSource\datatype\IUser.ts" />
+    <TypeScriptCompile Include="src\dataSource\global\DistilleryDatabase.ts" />
     <TypeScriptCompile Include="src\dataSource\global\IDistilleryDatabase.ts" />
     <TypeScriptCompile Include="src\dataSource\global\IDatabase.ts" />
     <TypeScriptCompile Include="src\dataSource\global\ISpiritDatabase.ts" />
     <TypeScriptCompile Include="src\dataSource\global\ISpiritOpinionDatabase.ts" />
     <TypeScriptCompile Include="src\dataSource\global\mock\DistilleryDatabase.ts" />
     <TypeScriptCompile Include="src\dataSource\global\mock\SpiritDatabase.ts" />
+    <TypeScriptCompile Include="src\dataSource\global\SpiritDatabase.ts" />
     <TypeScriptCompile Include="src\utilities\Assert.ts" />
   </ItemGroup>
   <ItemGroup>

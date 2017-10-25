@@ -2,21 +2,20 @@
 import SpiritCard from "../item/SpiritCard";
 import VerticalList from "../layout/VerticalList";
 import ISpirit from "src/dataSource/datatype/ISpirit";
-import ISpiritDatabase from "src/dataSource/global/ISpiritDatabase";
-
+import IApplicationContext from "src/application/IApplicationContext";
 
 export default class Home extends BaseControl<HTMLDivElement> {
-    private db: ISpiritDatabase;
+    private context: IApplicationContext;
     private list: VerticalList;
     private get header(): HTMLElement {
         let h = document.createElement("h1");
-        h.innerText = "Mash: whiskeys";
+        h.innerText = "Welcome " + this.context.User.name;
         return h;
     }
 
-    constructor(root: HTMLDivElement, db: ISpiritDatabase) {
+    constructor(root: HTMLDivElement, context: IApplicationContext) {
         super(root);
-        this.db = db;
+        this.context = context;
     }
 
     public Render(): Promise<void> {
@@ -27,7 +26,7 @@ export default class Home extends BaseControl<HTMLDivElement> {
         this.list = new VerticalList(listDiv);
 
         let promises: Promise<void>[] = [];
-        return this.db.top(5).then((spirits: ISpirit[]) => {
+        return this.context.SpiritDatabase.top(5).then((spirits: ISpirit[]) => {
             spirits.map((spirit: ISpirit) => {
                 this.list.AddControl(new SpiritCard(null, spirit));
             })
